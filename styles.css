@@ -1,0 +1,33 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  box-sizing: border-box;
+  background-color: rgb(229, 231, 233);
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  padding: 30px;
+  margin: 30px auto;
+  color: rgb(94, 78, 78);
+}
+
+.card {
+    width: 30%;
+    height: 500px;
+    background-color: rgb(160, 150, 150);
+    margin: 25px 0;
+    border-radius: 20px;
+}
+
+.container {
+    width: 90vw;
+    background-color: rgb(229, 231, 233);
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
