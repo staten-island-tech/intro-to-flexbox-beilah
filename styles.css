@@ -16,18 +16,30 @@ h1 {
 }
 
 .card {
-    width: 30%;
-    height: 500px;
-    background-color: rgb(160, 150, 150);
-    margin: 25px 0;
-    border-radius: 20px;
+  width: 30%;
+  background-color: rgb(160, 150, 150);
+  border-radius: 20px;
+  height: 40rem;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cardHeader {
+    font-size: 50px;
+}
+
+.img {
+    height: 200px;
 }
 
 .container {
-    width: 90vw;
-    background-color: rgb(229, 231, 233);
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  background-color: rgb(229, 231, 233);
+  width: 90vw;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
