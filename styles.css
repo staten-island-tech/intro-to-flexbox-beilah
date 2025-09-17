@@ -1,18 +1,35 @@
 body,
-html {
+html,
+* {
   padding: 0;
   margin: 0;
   font-size: 10px;
   box-sizing: border-box;
+}
+
+body {
   background-color: rgb(229, 231, 233);
+}
+
+.gloria-hallelujah-regular {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.reenie-beanie-regular {
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
   text-align: center;
-  font-size: 50px;
+  font-size: 80px;
   padding: 30px;
   margin: 30px auto;
   color: rgb(94, 78, 78);
+  font-family: Reenie Beanie;
 }
 
 .card {
@@ -25,14 +42,48 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 0 0 20px rgb(61, 38, 38);
 }
 
 .cardHeader {
-    font-size: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(238, 233, 233);
+  font-family: Gloria Hallelujah;
 }
 
 .img {
-    height: 200px;
+  height: 200px;
+}
+
+#roborovskiDwarf {
+  margin-top: -60px;
+  margin-bottom: -40px;
+  height: 300px
+}
+
+#russianDwarf {
+  height: 150px;
+}
+
+.cardPrice {
+  font-size: 30px;
+  text-align: center;
+  color: rgb(68, 66, 66);
+  font-family: Reenie Beanie;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+.button {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(117, 105, 105);
+  color: aliceblue;
+  height: 30px;
+  width: 80px;
+  border-radius: 20px;
+  border-color: transparent;
+  font-style: italic;
 }
 
 .container {
@@ -42,4 +93,12 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+#contact {
+  text-align: center;
+  font-size: 25px;
+  margin: 75px auto;
+  font-style: italic;
+  color: rgb(119, 115, 115);
 }
