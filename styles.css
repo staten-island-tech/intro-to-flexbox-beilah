@@ -5,6 +5,16 @@ html,
   margin: 0;
   font-size: 10px;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 800px){
+  .container{
+    flex-direction: column;
+  }
+  .card{
+    width: 100%;
+  }
 }
 
 body {
@@ -53,7 +63,15 @@ h1 {
 }
 
 .img {
-  height: 200px;
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+#chineseStriped {
+  height: 250px;
+  margin-top: -80px;
+  margin-bottom: -40px;
 }
 
 #roborovskiDwarf {
