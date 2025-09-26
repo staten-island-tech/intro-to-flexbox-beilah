@@ -20,7 +20,7 @@ middle(10, 5, 8);
 /* function getSecondLargest(x, y, z) {
     const numbers = [x, y, z];
     const unique = [...new Set(numbers)]; //rmeoves dupes
-    unique.sort((a, b) => b - a);
+    unique.sort((a, b) => b - a); //b-a is ascending, a-b is descending
     console.log(unique[1])
 }
 getSecondLargest(3, 7, 5) */
