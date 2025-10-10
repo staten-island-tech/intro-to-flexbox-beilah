@@ -1,3 +1,5 @@
+let cart = [];
+
 const container = document.querySelector('.container');
 
 const products = [
@@ -47,6 +49,8 @@ const products = [
   },
 ];
 
+
+
 products.forEach(product => {
     const html = `
         <div class="card">
@@ -58,3 +62,16 @@ products.forEach(product => {
         `;
     container.innerHTML += html;
 })
+
+function getCards() {
+  const buttons = document.querySelectorAll("button");
+    const btnArr = Array.from(buttons);
+    btnArr.addEventListener("click", function (event) {
+
+      console.log(
+        event.target.closest(",display.card").getAttribute("data-id"),
+        event.target.textContent
+      );
+    } )
+}
+getCards();
