@@ -1,6 +1,7 @@
 let cart = [];
 
 const container = document.querySelector('.container');
+const filterButton = document.querySelectorAll('.filterButton');
 
 const products = [
   {
@@ -46,10 +47,8 @@ const products = [
     name: "Winter White Dwarf Hamster",
     price: 250,
     image: "pictures/winterwhitedwarf.png",
-  },
+  }, 
 ];
-
-
 
 products.forEach(product => {
     const html = `
