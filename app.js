@@ -1,7 +1,7 @@
-let cart = [];
+const cart = [];
 
-const container = document.querySelector('.container');
-const filterButton = document.querySelectorAll('.filterButton');
+const container = document.querySelector(".container");
+const filterButton = document.querySelectorAll(".filterButton");
 
 const products = [
   {
@@ -19,9 +19,7 @@ const products = [
     price: 225,
     image: "pictures/roborovskidwarf.png",
   },
-  { name: "Romanian Hamster", 
-    price: 160, 
-    image: "pictures/romanian.png" },
+  { name: "Romanian Hamster", price: 160, image: "pictures/romanian.png" },
   {
     name: "Russian Dwarf Hamster",
     price: 225,
@@ -42,16 +40,15 @@ const products = [
     price: 300,
     image: "pictures/ciscaucasian.png",
   },
-
   {
     name: "Winter White Dwarf Hamster",
     price: 250,
     image: "pictures/winterwhitedwarf.png",
-  }, 
+  },
 ];
 
-products.forEach(product => {
-    const html = `
+products.forEach((product) => {
+  const html = `
         <div class="card">
           <h2 class="cardHeader">${product.name}</h2>
           <img class="img" src=${product.image} alt="Syrian Hamster" />
@@ -59,18 +56,30 @@ products.forEach(product => {
           <button class="button">Add to cart</button>
         </div>
         `;
-    container.innerHTML += html;
-})
+  container.innerHTML += html;
+});
 
 function getCards() {
-  const buttons = document.querySelectorAll("button");
-    const btnArr = Array.from(buttons);
-    btnArr.addEventListener("click", function (event) {
-
-      console.log(
-        event.target.closest(",display.card").getAttribute("data-id"),
-        event.target.textContent
-      );
-    } )
+  const buttons = document.querySelectorAll("button"); // get all buttons
+  const btnArr = Array.from(buttons); // convert NodeList to Array
+  btnArr.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      // console.log(event.target);
+      console.log(event.target.closest(".card"));
+      cart.push(event.target.closest(".card"));
+      console.log(cart);
+    })
+  );
 }
+products[3];
 getCards();
+// make array
+// find item in array, .find("name")
+// push item to cart array
+// show cart
+// update total
+
+const viewCartButton = document.querySelector(".viewCart");
+
+viewCartButton.addEventListener("click",  () => {
+  container.innerHTML = "";
