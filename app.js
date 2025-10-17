@@ -79,7 +79,8 @@ getCards();
 // show cart
 // update total
 
-const viewCartButton = document.querySelector(".viewCart");
+const viewCartButton = document.querySelector("#viewCart");
 
-viewCartButton.addEventListener("click",  () => {
+viewCartButton.addEventListener("click", () => {
   container.innerHTML = "";
+});
