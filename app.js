@@ -79,8 +79,27 @@ getCards();
 // show cart
 // update total
 
-const viewCartButton = document.querySelector("#viewCart");
+const cartButton = document.querySelector("#icon-cart");
+const shortHaired = document.querySelector("#short");
 
-viewCartButton.addEventListener("click", () => {
+
+cartButton.addEventListener("click", function(){
   container.innerHTML = "";
 });
+
+shortHaired.addEventListener("click", function(){
+  container.innerHTML = "";
+});
+
+function filterByCoat(coat){
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const cardCategory = card.getAttribute("coat");
+    if (cardCategory === coat) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  })
+}
+filterByCoat("short-haired");

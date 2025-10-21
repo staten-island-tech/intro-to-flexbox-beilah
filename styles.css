@@ -153,11 +153,15 @@ h4 {
   width: 20px;
   height: 20px;
   vertical-align: middle;
-  margin-left: 5px;
+  margin: 15px;
 }
 
 #navbar {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 .button:hover {
@@ -166,8 +170,12 @@ h4 {
   color: rgb(117, 105, 105);
 }
 
-.filterButton:hover {
+#icon-cart:hover {
   transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.filterButton:hover {
   text-decoration: underline;
 }
 
