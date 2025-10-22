@@ -39,11 +39,13 @@ const products = [
     name: "Ciscaucasian Hamster",
     price: 300,
     image: "pictures/ciscaucasian.png",
+    coat: "long"
   },
   {
     name: "Winter White Dwarf Hamster",
     price: 250,
     image: "pictures/winterwhitedwarf.png",
+    coat: "short"
   },
 ];
 
@@ -79,19 +81,37 @@ getCards();
 // show cart
 // update total
 
-const cartButton = document.querySelector("#icon-cart");
-const shortHaired = document.querySelector("#short");
+let all = document.querySelector("#all");
+let cartButton = document.querySelector("#icon-cart");
+let shortHaired = document.querySelector("#short");
 
-
-cartButton.addEventListener("click", function(){
+cartButton.addEventListener("click", function () {
   container.innerHTML = "";
+  body.classList.toggle("showCart");
 });
 
-shortHaired.addEventListener("click", function(){
+shortHaired.addEventListener("click", function () {
   container.innerHTML = "";
+  products.forEach((product) => {
+    if (coat === coat);
+  })
 });
 
-function filterByCoat(coat){
+all.addEventListener("click", function () {
+  products.forEach((product) => {
+    const html = `
+        <div class="card">
+          <h2 class="cardHeader">${product.name}</h2>
+          <img class="img" src=${product.image} alt="Syrian Hamster" />
+          <h3 class="cardPrice">${product.price}</h3>
+          <button class="button">Add to cart</button>
+        </div>
+        `;
+    container.innerHTML += html;
+  });
+});
+
+function filterByCoat(coat) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("coat");
@@ -100,6 +120,10 @@ function filterByCoat(coat){
     } else {
       card.style.display = "none";
     }
-  })
+  });
 }
-filterByCoat("short-haired");
+// filterByCoat("short-haired");
+
+/* filterButton.forEach((card) => {
+  card.addEventListener('click' => )
+}) */
