@@ -91,18 +91,19 @@ getCards();
 // show cart
 // update total
 
+document.querySelectorAll('.addToCart').forEach((button) => {
+  button.addEventListener("click", (event) => {
+
+  })
+})
+
 let all = document.querySelector("#all");
-let cartButton = document.querySelector("#icon-cart");
 let shortHaired = document.querySelector("#short");
 let longHaired = document.querySelector("#long");
 let satinHaired = document.querySelector("#satin");
 let curlyHaired = document.querySelector("#curly");
 
-cartButton.addEventListener("click", function () {
-  container.innerHTML = "";
-  addToCart
-  body.classList.toggle("showCart");
-});
+
 
 curlyHaired.addEventListener("click", function () {
   container.innerHTML = "";
