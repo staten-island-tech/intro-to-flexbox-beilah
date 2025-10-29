@@ -6,12 +6,14 @@ const filterButton = document.querySelectorAll(".filterButton");
 const products = [
   {
     name: "Syrian Hamster",
+    productName: "syrian",
     price: 180,
     image: "pictures/syrian.png",
     coat: "long",
   },
   {
     name: "Campbell Dwarf Hamster",
+    productName: "campbell",
     price: 200,
     image: "pictures/campbelldwarf.png",
     coat: "short",
@@ -62,7 +64,7 @@ const products = [
 
 products.forEach((product) => {
   const html = `
-        <div class="card"  data-coat="${product.coat}">
+        <div class="card"  data-coat="${product.coat}" data-name="${product.productName}>
           <h2 class="cardHeader">${product.name}</h2>
           <img class="img" src=${product.image} />
           <h3 class="cardPrice">${product.price}</h3>
