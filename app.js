@@ -62,9 +62,9 @@ const products = [
 
 products.forEach((product) => {
   const html = `
-        <div class="card"  data-coat="${product.coat}" data-name="${product.name}" >
+        <div class="card"  data-coat="${product.coat}">
           <h2 class="cardHeader">${product.name}</h2>
-          <img class="img" src=${product.image} alt="Syrian Hamster" />
+          <img class="img" src=${product.image} />
           <h3 class="cardPrice">${product.price}</h3>
           <button class="addToCart">Add to cart</button>
         </div>
@@ -72,23 +72,38 @@ products.forEach((product) => {
   container.innerHTML += html;
 });
 
-// make array
-// find item in array, .find("name")
-// push item to cart array
-// show cart
-// update total
+const cartBtn = document.querySelector(".cartBtn");
+cartBtn.addEventListener("click", showCart);
 
-document.querySelectorAll('.addToCart').forEach((button) => {
+document.querySelectorAll(".addToCart").forEach((button) => {
   button.addEventListener("click", (event) => {
     const item = event.target.closest(".card");
     console.log(item);
     cart.push(item);
     console.log(cart);
-    document.querySelector('cartBtn')
-  })
-})
+    document.querySelector("cartBtn");
+  });
+});
 
+function showCart() {
+  container.innerHTML = "";
+  cart.forEach((product) => {
+    const html = `
+      <div class="card" data-coat="${product.coat}">
+        <h2 class="cardHeader">${product.name}</h2>
+          <img class="img" src=${product.image} alt="Syrian Hamster" />
+            <h3 class="cardPrice">${product.price}</h3>
+      </div>
+      `;
+    container.innerHTML += html;
+  });
+}
 
+// make array
+// find item in array, .find("name")
+// push item to cart array
+// show cart
+// update total
 
 let all = document.querySelector("#all");
 let shortHaired = document.querySelector("#short");
@@ -102,7 +117,7 @@ curlyHaired.addEventListener("click", function () {
   products.forEach((product) => {
     if (product.coat === "curly") {
       const html = `
-      <div class="card" data-coat="${product.coat}" data-name='${product.name}>
+      <div class="card" data-coat="${product.coat}">
         <h2 class="cardHeader">${product.name}</h2>
           <img class="img" src=${product.image} alt="Syrian Hamster" />
             <h3 class="cardPrice">${product.price}</h3>
