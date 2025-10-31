@@ -6,14 +6,12 @@ const filterButton = document.querySelectorAll(".filterButton");
 const products = [
   {
     name: "Syrian Hamster",
-    productName: "syrian",
     price: 180,
     image: "pictures/syrian.png",
     coat: "long",
   },
   {
     name: "Campbell Dwarf Hamster",
-    productName: "campbell",
     price: 200,
     image: "pictures/campbelldwarf.png",
     coat: "short",
@@ -60,11 +58,77 @@ const products = [
     image: "pictures/winterwhitedwarf.png",
     coat: "short",
   },
+  {
+    name: "Syrian Hamster",
+    price: 180,
+    image: "pictures/syrian.png",
+    coat: "long",
+  },
+  {
+    name: "Campbell Dwarf Hamster",
+    price: 200,
+    image: "pictures/campbelldwarf.png",
+    coat: "short",
+  },
+  {
+    name: "Roborovski Dwarf Hamster",
+    price: 225,
+    image: "pictures/roborovskidwarf.png",
+    coat: "satin",
+  },
+  {
+    name: "Romanian Hamster",
+    price: 160,
+    image: "pictures/romanian.png",
+    coat: "curly",
+  },
+  {
+    name: "Russian Dwarf Hamster",
+    price: 225,
+    image: "pictures/russiandwarf.png",
+    coat: "short",
+  },
+  {
+    name: "Chinese Hamster",
+    price: 175,
+    image: "pictures/chinese.png",
+    coat: "satin",
+  },
+  {
+    name: "Chinese Striped Hamster",
+    price: 180,
+    image: "pictures/chinesestriped.png",
+    coat: "curly",
+  },
+  {
+    name: "Ciscaucasian Hamster",
+    price: 300,
+    image: "pictures/ciscaucasian.png",
+    coat: "long",
+  },
+  {
+    name: "Winter White Dwarf Hamster",
+    price: 250,
+    image: "pictures/winterwhitedwarf.png",
+    coat: "short",
+  },
+  {
+    name: "Syrian Hamster",
+    price: 180,
+    image: "pictures/syrian.png",
+    coat: "long",
+  },
+  {
+    name: "Campbell Dwarf Hamster",
+    price: 200,
+    image: "pictures/campbelldwarf.png",
+    coat: "short",
+  },
 ];
 
 products.forEach((product) => {
   const html = `
-        <div class="card"  data-coat="${product.coat}" data-name="${product.productName}>
+        <div class="card"  data-coat="${product.coat}" data-name='${product.name}' >
           <h2 class="cardHeader">${product.name}</h2>
           <img class="img" src=${product.image} />
           <h3 class="cardPrice">${product.price}</h3>
@@ -79,11 +143,12 @@ cartBtn.addEventListener("click", showCart);
 
 document.querySelectorAll(".addToCart").forEach((button) => {
   button.addEventListener("click", (event) => {
-    const item = event.target.closest(".card");
+    const item = event.target.closest(".card").getAttribute("data-name");
+    //gFIND item in array
     console.log(item);
-    cart.push(item);
+    const bought = products.find((product) => product.name === item);
+    cart.push(bought);
     console.log(cart);
-    document.querySelector("cartBtn");
   });
 });
 
@@ -100,12 +165,6 @@ function showCart() {
     container.innerHTML += html;
   });
 }
-
-// make array
-// find item in array, .find("name")
-// push item to cart array
-// show cart
-// update total
 
 let all = document.querySelector("#all");
 let shortHaired = document.querySelector("#short");
