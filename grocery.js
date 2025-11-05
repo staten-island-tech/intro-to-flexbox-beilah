@@ -1,4 +1,16 @@
 function total() {
+  let total = 0;
+cart.forEach((item) => {
+  if(item.price < 5) {
+    total += item.quantity * item.price * 0.95;
+  }
+  else {
+    total += item.quantity * item.price;
+  }
+})
+if (total > 100) {
+  total = total * 0.9;
+}
     return total;
 }
 
