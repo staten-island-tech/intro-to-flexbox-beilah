@@ -153,26 +153,28 @@ document.querySelectorAll(".addToCart").forEach((button) => {
 });
 
 function showCart() {
-
   let total = 0;
 
   cart.forEach((product) => {
     total += product.price;
-  })
+  });
 
   container.innerHTML = "";
   cart.forEach((product) => {
     const html = `
       <div class="card" data-coat="${product.coat}">
         <h2 class="cardHeader">${product.name}</h2>
-          <img class="img" src=${product.image} alt="Syrian Hamster" />
+          <img class="img" src=${product.image} alt="${product.name}" />
             <h3 class="cardPrice">${product.price}</h3>
       </div>
       `;
     container.innerHTML += html;
   });
-  const totalHTML = `
-  <div class="cartTotal"></div>`
+  const html = `
+  <div class="cartTotal">
+    <h2 id="cartTotal">Total: ¥${total.toFixed(2)}</h2>
+  </div>`;
+  container.innerHTML += html;
 }
 
 let all = document.querySelector("#all");
